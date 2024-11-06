@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkel2icknqve0"]
+
+[ext_resource type="PackedScene" uid="uid://xvp8dxfwao21" path="res://Character/Michel/Michel.tscn" id="1_7hu6i"]
+[ext_resource type="Texture2D" uid="uid://clbyd1ss51uml" path="res://icon.svg" id="1_wcla8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uhpcw"]
+size = Vector3(50, 0.2, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsrqf"]
+albedo_texture = ExtResource("1_wcla8")
+
+[sub_resource type="BoxMesh" id="BoxMesh_bfycx"]
+material = SubResource("StandardMaterial3D_hsrqf")
+size = Vector3(50, 0.5, 50)
+
+[sub_resource type="Environment" id="Environment_swt8c"]
+
+[node name="Testing" type="Node3D"]
+
+[node name="sol" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sol"]
+shape = SubResource("BoxShape3D_uhpcw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="sol"]
+mesh = SubResource("BoxMesh_bfycx")
+
+[node name="Michel" parent="." instance=ExtResource("1_7hu6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.035, 0)
+collision_layer = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_swt8c")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25152, 0)
+omni_range = 13.1221
