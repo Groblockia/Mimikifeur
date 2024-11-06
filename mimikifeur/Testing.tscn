@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkel2icknqve0"]
+[gd_scene load_steps=10 format=3 uid="uid://dkel2icknqve0"]
 
 [ext_resource type="PackedScene" uid="uid://xvp8dxfwao21" path="res://Character/Michel/Michel.tscn" id="1_7hu6i"]
 [ext_resource type="Texture2D" uid="uid://clbyd1ss51uml" path="res://icon.svg" id="1_wcla8"]
@@ -13,18 +13,60 @@ albedo_texture = ExtResource("1_wcla8")
 material = SubResource("StandardMaterial3D_hsrqf")
 size = Vector3(50, 0.5, 50)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ow5uk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gcdt"]
+albedo_texture = ExtResource("1_wcla8")
+
+[sub_resource type="BoxMesh" id="BoxMesh_cntrq"]
+material = SubResource("StandardMaterial3D_6gcdt")
+
 [sub_resource type="Environment" id="Environment_swt8c"]
 
 [node name="Testing" type="Node3D"]
 
-[node name="sol" type="StaticBody3D" parent="."]
+[node name="terrain" type="Node3D" parent="."]
+
+[node name="sol" type="StaticBody3D" parent="terrain"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="sol"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/sol"]
 shape = SubResource("BoxShape3D_uhpcw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="sol"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="terrain/sol"]
 mesh = SubResource("BoxMesh_bfycx")
+
+[node name="cube" type="StaticBody3D" parent="terrain"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/cube"]
+shape = SubResource("BoxShape3D_ow5uk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="terrain/cube"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.09431e-07, 0.854996, -9.36668)
+mesh = SubResource("BoxMesh_cntrq")
+
+[node name="cube2" type="StaticBody3D" parent="terrain"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.15328, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/cube2"]
+shape = SubResource("BoxShape3D_ow5uk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="terrain/cube2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.12956, 0.854996, -5.12429)
+mesh = SubResource("BoxMesh_cntrq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="terrain/cube2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.15598, -1.1888, 6.99264)
+mesh = SubResource("BoxMesh_cntrq")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="terrain/cube2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23508, -1.1888, 5.09575)
+mesh = SubResource("BoxMesh_cntrq")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="terrain/cube2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.62631, -1.1888, 4.17012)
+mesh = SubResource("BoxMesh_cntrq")
 
 [node name="Michel" parent="." instance=ExtResource("1_7hu6i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.035, 0)
