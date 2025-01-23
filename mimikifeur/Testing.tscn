@@ -37,35 +37,59 @@ shape = SubResource("BoxShape3D_uhpcw")
 mesh = SubResource("BoxMesh_bfycx")
 
 [node name="cube" type="StaticBody3D" parent="terrain"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.86783, 0.752426, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/cube"]
 shape = SubResource("BoxShape3D_ow5uk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="terrain/cube"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.09431e-07, 0.854996, -9.36668)
 mesh = SubResource("BoxMesh_cntrq")
 
 [node name="cube2" type="StaticBody3D" parent="terrain"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.15328, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.61385, 0.791281, -3.54036)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/cube2"]
 shape = SubResource("BoxShape3D_ow5uk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="terrain/cube2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.12956, 0.854996, -5.12429)
+mesh = SubResource("BoxMesh_cntrq")
+skeleton = NodePath("../../cube2")
+
+[node name="cube3" type="StaticBody3D" parent="terrain"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -8.62444, 1.188, -2.53905)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/cube3"]
+shape = SubResource("BoxShape3D_ow5uk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="terrain/cube3"]
+mesh = SubResource("BoxMesh_cntrq")
+skeleton = NodePath("../../cube3")
+
+[node name="cube4" type="StaticBody3D" parent="terrain"]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -8.67164, 1.60269, -1.52027)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/cube4"]
+shape = SubResource("BoxShape3D_ow5uk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="terrain/cube4"]
 mesh = SubResource("BoxMesh_cntrq")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="terrain/cube2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.15598, -1.1888, 6.99264)
+[node name="cube5" type="StaticBody3D" parent="terrain"]
+transform = Transform3D(6.89378, 0, 2.13163e-14, 0, 1, 0, -8.52651e-14, 0, 1.47545, 2.62205, 0.752426, -8.07834)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/cube5"]
+shape = SubResource("BoxShape3D_ow5uk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="terrain/cube5"]
 mesh = SubResource("BoxMesh_cntrq")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="terrain/cube2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23508, -1.1888, 5.09575)
-mesh = SubResource("BoxMesh_cntrq")
+[node name="cube6" type="StaticBody3D" parent="terrain"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.61519, 0.332401, -4.44516)
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="terrain/cube2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.62631, -1.1888, 4.17012)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terrain/cube6"]
+shape = SubResource("BoxShape3D_ow5uk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="terrain/cube6"]
 mesh = SubResource("BoxMesh_cntrq")
 
 [node name="Michel" parent="." instance=ExtResource("1_7hu6i")]

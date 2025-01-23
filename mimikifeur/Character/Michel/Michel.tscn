@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://xvp8dxfwao21"]
+[gd_scene load_steps=5 format=3 uid="uid://xvp8dxfwao21"]
 
-[ext_resource type="Script" path="res://Character/Michel/michel.gd" id="1_yt3ra"]
+[ext_resource type="Script" path="res://scripts/michel.gd" id="1_yt3ra"]
+[ext_resource type="Script" path="res://scripts/camera_3d.gd" id="2_ksyyx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_di2gh"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_j4jyp"]
 
-[node name="Michel" type="CharacterBody3D"]
+[node name="PlayerStateControlled" type="CharacterBody3D"]
 script = ExtResource("1_yt3ra")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -16,6 +17,6 @@ shape = SubResource("CapsuleShape3D_di2gh")
 mesh = SubResource("CapsuleMesh_j4jyp")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 0)
-projection = 1
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1, 2.5)
 size = 10.0
+script = ExtResource("2_ksyyx")
